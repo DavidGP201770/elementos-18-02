@@ -1,5 +1,6 @@
 package unitec.org.Elementos;
 
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,7 +17,42 @@ public class ElementosApplication implements CommandLineRunner{ // simula comand
 
     @Override
     public void run(String... strings) throws Exception {
-        Mensajitos m = new Mensajitos("primero","Mi primer mensajito con hiberante");
-        RepoMensa.save(m);
+        //UPDATE
+        //Mensajitos m = new Mensajitos("primero","Mi primer mensajito con hiberante");
+        //RepoMensa.save(m);
+        
+        //SELECT *
+        
+        /*ArrayList<Mensajitos> mensajitos =(ArrayList<Mensajitos>)RepoMensa.findAll();
+        for(Mensajitos mensa:mensajitos){
+        
+            System.out.println(mensa.getTitulo());
+            System.out.println(mensa.getCuerpo());
+        
+        }
+        */
+        
+        //BUSCAR POR ID
+           //Mensajitos m1=RepoMensa.findOne(1);
+           //System.out.println(m1.getTitulo());
+           
+        //
+          /*  RepoMensa.save(new Mensajitos(1,"otro",""));
+            ArrayList<Mensajitos> mensajitos =(ArrayList<Mensajitos>)RepoMensa.findAll();
+        for(Mensajitos mensa:mensajitos){
+         
+            System.out.println(mensa.getTitulo());
+            System.out.println(mensa.getCuerpo());
+        }
+            */
+        // BORRAR
+        RepoMensa.delete(1);
+        
+        ArrayList<Mensajitos> mensajitos =(ArrayList<Mensajitos>)RepoMensa.findAll();
+        for(Mensajitos mensa:mensajitos){
+         
+            System.out.println(mensa.getTitulo());
+            System.out.println(mensa.getCuerpo());
+        }
     }
 }
