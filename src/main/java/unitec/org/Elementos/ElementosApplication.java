@@ -46,7 +46,7 @@ public class ElementosApplication implements CommandLineRunner{ // simula comand
         }
             */
         // BORRAR
-        RepoMensa.delete(1);
+     //   RepoMensa.delete(1);
         
         ArrayList<Mensajitos> mensajitos =(ArrayList<Mensajitos>)RepoMensa.findAll();
         for(Mensajitos mensa:mensajitos){
